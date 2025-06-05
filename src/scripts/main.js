@@ -15,9 +15,11 @@ getInputs.forEach((input) => {
     labelElement.textContent = labelText;
   }
 
-  if (input.id) {
-    labelElement.setAttribute('for', input.id);
+  if (!input.id) {
+    input.id = 'input-' + Math.random().toString(36).slice(2, 11);
   }
+
+  labelElement.setAttribute('for', input.id);
 
   input.setAttribute(
     'placeholder',
