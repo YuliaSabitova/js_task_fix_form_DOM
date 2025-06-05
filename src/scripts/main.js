@@ -14,7 +14,10 @@ getInputs.forEach((input) => {
 
     labelElement.textContent = labelText;
   }
-  labelElement.setAttribute('for', input.id);
+
+  if (input.id) {
+    labelElement.setAttribute('for', input.id);
+  }
 
   input.setAttribute(
     'placeholder',
